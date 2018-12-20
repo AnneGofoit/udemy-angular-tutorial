@@ -9,11 +9,41 @@ import { Component, OnInit } from '@angular/core';
   //             <app-server></app-server> `,
   styleUrls: ['./servers.component.css']
 })
-export class ServersComponent implements OnInit {
 
-  constructor() { }
+export class ServersComponent implements OnInit {
+  allowNewServer = false;
+  allowReset = false;
+  serverCreationStatus = 'No Server was created.';
+  serverName: string = 'TestServer';
+  userName: string = '';
+  serverCreated = false;
+
+  constructor() { 
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000);
+  }
 
   ngOnInit() {
   }
 
+  onCreateServer() {
+    this.serverCreated = true;
+    this.serverCreationStatus = 'Server was created. Name is ' + this.serverName;
+  }
+
+  onUpdateServerName(event: any) {
+    this.serverName = event.target.value;
+  }
+
+  onUpdateUserName(event: any) {
+    this.userName = event.target.value;
+    if(this.userName.length > 0) this.allowReset = true;
+    else this.allowReset = false;
+  }
+
+  resetUserName() {
+    this.userName = '';
+    this.allowReset = false;
+  }
 }
