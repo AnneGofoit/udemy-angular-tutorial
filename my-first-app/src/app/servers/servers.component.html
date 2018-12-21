@@ -20,8 +20,7 @@
    <p>No Server was created.</p>
 </ng-template>
 
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 
 <hr>
 
@@ -37,3 +36,9 @@
     class="btn btn-primary"
     [disabled]="!allowReset"
     (click)="resetUserName()">Reset</button>
+
+<hr>
+
+<label>Assignment 3</label>
+
+<app-assignment3></app-assignment3>
