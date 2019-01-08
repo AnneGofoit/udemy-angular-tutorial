@@ -1,4 +1,27 @@
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <app-game-control
+          (incEvent)="onIncEvent($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+      <div class="col-xs-6">
+        <strong>Odd Numbers</strong>
+        <app-odd *ngFor="let oddNumber of oddNumbers">
+            <p>{{oddNumber}}</p>
+        </app-odd>
+      </div>
+      <div class="col-xs-6">
+        <strong>Even Numbers</strong>
+        <app-even *ngFor="let evenNumber of evenNumbers">
+            <p>{{evenNumber}}</p>
+        </app-even>
+      </div>
+    </div>
+</div>
+
+<!-- <div class="container">
   <app-cockpit 
   (serverCreated)="onServerAdded($event)"
   (bpCreated)="onBlueprintAdded($event)"
@@ -18,4 +41,4 @@
       </app-server-element>
     </div>
   </div>
-</div>
+</div> -->

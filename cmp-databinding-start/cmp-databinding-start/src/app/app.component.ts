@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   serverElements = [{type: 'server', name: 'Testserver', content: 'Just a test!'}];
+  oddNumbers = [];
+  evenNumbers = [];
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
@@ -30,5 +32,21 @@ export class AppComponent {
 
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
+  }
+
+  // ------------------ ASSIGNMENT - GAME CONTROL --------------------
+
+  onIncEvent(data) {
+    if(data.incNumber <= 0) return true;
+
+    if(this.isEven(data.incNumber)){
+      this.evenNumbers.push(data.incNumber);
+    } else {
+      this.oddNumbers.push(data.incNumber);
+    }
+  }
+
+  isEven(i: number) {
+    return i % 2 == 0;
   }
 }
