@@ -54,7 +54,7 @@ ng new my-app
 
 npm install bootstrap
 
-ng add @angular/material
+npm install --save @angular/material @angular/cdk @angular/animations
 
 Go to directory
 
