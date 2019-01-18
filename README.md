@@ -5,7 +5,7 @@ git remote remove origin
 
 git remote add origin https://github.com/AnneGofoit/udemy-angular-tutorial.git
 
-git pull
+git pull origin master
 
 git add -A
 
